@@ -70,7 +70,7 @@ public class CheckoutAcceptanceTest {
 
         var response = restTemplate.postForEntity(baseUrl() + "/" + sessionId + "/scan/Z", null, String.class);
 
-        assertThat(response.getStatusCodeValue()).isEqualTo(400);
+        assertThat(response.getStatusCodeValue()).isEqualTo(404);
         assertThat(response.getBody()).contains("Unknown product: Z");
     }
 
