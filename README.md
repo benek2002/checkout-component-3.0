@@ -18,9 +18,9 @@ The service exposes a REST API to scan items, apply pricing rules (bulk and bund
    ```bash
   ./gradlew bootRun
 
-To execute all tests (unit + integration + acceptance):
-   ```bash
-  ./gradlew test
+3. To execute all tests (unit, integration, and acceptance), run:
+```bash
+./gradlew test
 
 ## Run with Docker
 
@@ -39,8 +39,8 @@ http://localhost:8080/checkout
 
 ### Start a checkout session
 
-  POST /checkout/start
-  Response: UUID (session id)
+POST /checkout/start
+Response: UUID (session id)
 
 ### Scan an item
 
