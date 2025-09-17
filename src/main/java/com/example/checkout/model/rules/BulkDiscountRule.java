@@ -17,8 +17,12 @@ public class BulkDiscountRule implements PricingRule {
         int qty = items.getOrDefault(item, 0);
         if (qty < requiredQty) return BigDecimal.ZERO;
 
+        int promoGroups = qty / requiredQty;
+        int remaining = qty % requiredQty;
+
+        BigDecimal promoTotal = discountedPrice.multiply(BigDecimal.valueOf(promoGroups * requiredQty))
+                .add(item.getPrice().multiply(BigDecimal.valueOf(remaining)));
         BigDecimal normalTotal = item.getPrice().multiply(BigDecimal.valueOf(qty));
-        BigDecimal promoTotal = discountedPrice.multiply(BigDecimal.valueOf(qty));
 
         return promoTotal.subtract(normalTotal);
     }
