@@ -11,25 +11,20 @@ The service exposes a REST API to scan items, apply pricing rules (bulk and bund
 ## Run locally
 
 1. Build the project:
-   ```bash
    ./gradlew clean build
 
 2. Run the service:
-   ```bash
   ./gradlew bootRun
 
 3. To execute all tests (unit, integration, and acceptance), run:
-```bash
-./gradlew test
+   ./gradlew test
 
 ## Run with Docker
 
 1. Build Docker image:
-```bash
 docker build -t checkout-service .
 
 2. Run container:
-```bash
 docker run -p 8080:8080 checkout-service
 
 ## API Usage
